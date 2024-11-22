@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savings Tracker - Personal Finance Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
-    <header class="bg-[#6870dc] text-white py-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="logo">
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-900 flex flex-col min-h-screen overflow-hidden relative">
+    <!-- Background Decorative Elements -->
+    <div class="absolute inset-0">
+        <div class="absolute w-96 h-96 bg-gradient-to-br from-blue-300 to-purple-400 rounded-full opacity-40 blur-3xl animate-float"></div>
+        <div class="absolute bottom-16 right-0 w-80 h-80 bg-gradient-to-tr from-pink-300 to-purple-400 rounded-full opacity-30 blur-3xl"></div>
+        <div class="absolute top-20 left-20 w-72 h-72 bg-gradient-to-t from-green-200 to-teal-300 rounded-full opacity-20 blur-2xl"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center space-x-4">
                 <img src="logo.png" alt="Logo" class="h-10">
+                <h1 class="text-2xl font-bold tracking-wide">Savings Tracker</h1>
             </div>
-            <h1 class="text-2xl font-bold">Savings Tracker</h1>
             <nav>
-                <ul class="flex space-x-4">
+                <ul class="flex space-x-6 text-lg">
                     <li><a href="index.html" class="hover:underline">Home</a></li>
                     <li><a href="expense.html" class="hover:underline">Expense Tracker</a></li>
                     <li><a href="budget.html" class="hover:underline">Budget Tracker</a></li>
@@ -25,33 +40,35 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-4 flex-grow">
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 flex-grow relative z-10">
         <!-- Savings Goal Form -->
-        <section class="mb-8 bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">Set Your Savings Goal</h2>
+        <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <h2 class="text-3xl font-semibold mb-6 text-blue-600">Set Your Savings Goal</h2>
             <form>
                 <div class="mb-4">
-                    <label for="goal" class="block text-gray-700">Goal Name</label>
-                    <input type="text" id="goal" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6870dc]" placeholder="Enter Your Goal Name">
+                    <label for="goal" class="block text-gray-700 font-medium">Goal Name</label>
+                    <input type="text" id="goal" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Your Goal Name">
                 </div>
                 <div class="mb-4">
-                    <label for="amount" class="block text-gray-700">Goal Amount</label>
-                    <input type="number" id="amount" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6870dc]" placeholder="Enter Amount Needed">
+                    <label for="amount" class="block text-gray-700 font-medium">Goal Amount</label>
+                    <input type="number" id="amount" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Amount Needed">
                 </div>
-                <button type="submit" class="bg-[#6870dc] text-white px-6 py-3 rounded-lg hover:bg-[#5a63c1] transition">Set Goal</button>
+                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Set Goal</button>
             </form>
         </section>
 
         <!-- Savings Progress -->
-        <section class="mb-8 bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">Savings Progress</h2>
+        <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <h2 class="text-3xl font-semibold mb-6 text-purple-600">Savings Progress</h2>
             <p class="text-gray-700">You are on track to save <strong>₹200</strong> towards your goal of <strong>₹1000</strong>. Keep it up!</p>
         </section>
     </main>
 
-    <footer class="bg-white shadow mt-8 py-2">
-        <div class="container mx-auto p-2 text-center">
-            <span class="text-sm text-gray-500">© 2024 <a href="index.html" class="hover:underline">Personal Finance Tracker™</a>. All Rights Reserved.</span>
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gradient-to-t from-gray-900 to-gray-800 text-gray-400 py-6 mt-auto">
+        <div class="container mx-auto text-center">
+            <span>© 2024 <a href="index.html" class="text-blue-500 hover:underline">Personal Finance Tracker™</a>. All Rights Reserved.</span>
         </div>
     </footer>
 </body>
