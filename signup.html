@@ -6,47 +6,56 @@
     <title>Signup - Personal Finance Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
 
-    <header class="bg-[#6870dc] text-white py-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="logo">
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-900 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center space-x-4">
                 <img src="logo.png" alt="Logo" class="h-10">
+                <h1 class="text-2xl font-bold tracking-wide">Sign Up</h1>
             </div>
-            <h1 class="text-2xl font-bold">Sign Up</h1>
         </div>
     </header>
 
-    <main class="container mx-auto p-4 flex-grow">
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 flex-grow relative z-10">
         <!-- Signup Form -->
-        <section class="mb-8 bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">Create Your Account</h2>
+        <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <h2 class="text-3xl font-semibold mb-6 text-blue-600">Create Your Account</h2>
             <form id="signupForm">
                 <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Full Name</label>
-                    <input type="text" id="name" class="w-full p-3 mt-2 border border-gray-300 rounded-lg" placeholder="Enter Your Name" required>
+                    <label for="name" class="block text-gray-700 font-medium">Full Name</label>
+                    <input type="text" id="name" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Your Name" required>
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" class="w-full p-3 mt-2 border border-gray-300 rounded-lg" placeholder="Enter Your Email" required>
+                    <label for="email" class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" id="email" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Your Email" required>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="block text-gray-700">Password</label>
-                    <input type="password" id="password" class="w-full p-3 mt-2 border border-gray-300 rounded-lg" placeholder="Enter Your Password" required>
+                    <label for="password" class="block text-gray-700 font-medium">Password</label>
+                    <input type="password" id="password" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Your Password" required>
                 </div>
                 <div class="mb-4">
-                    <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
-                    <input type="password" id="confirmPassword" class="w-full p-3 mt-2 border border-gray-300 rounded-lg" placeholder="Confirm Your Password" required>
+                    <label for="confirmPassword" class="block text-gray-700 font-medium">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm Your Password" required>
                 </div>
-                <button type="submit" class="bg-[#6870dc] text-white px-6 py-3 rounded-lg">Sign Up</button>
+                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">Sign Up</button>
             </form>
-            <p class="mt-4 text-center text-gray-700">Already have an account? <a href="login.html" class="text-[#6870dc] hover:underline">Login here</a></p>
+            <p class="mt-4 text-center text-gray-700">Already have an account? <a href="login.html" class="text-blue-600 hover:underline">Login here</a></p>
+
+            <!-- Back to Home link -->
+            <p class="mt-4 text-center text-gray-700">
+                <a href="index.html" class="text-blue-600 hover:underline">Back to Home</a>
+            </p>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-white shadow mt-8 py-2">
         <div class="container mx-auto p-2 text-center">
-            <span class="text-sm text-gray-500">© 2024 Personal Finance Tracker™. All Rights Reserved.</span>
+            <span class="text-sm text-gray-500">© 2024 <a href="index.html" class="text-blue-600 hover:underline">Personal Finance Tracker™</a>. All Rights Reserved.</span>
         </div>
     </footer>
 
