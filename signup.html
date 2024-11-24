@@ -9,7 +9,6 @@
 
 <body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-900 flex flex-col min-h-screen">
 
-    <!-- Header -->
     <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center px-6">
             <div class="flex items-center space-x-4">
@@ -19,9 +18,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12 flex-grow relative z-10">
-        <!-- Signup Form -->
         <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
             <h2 class="text-3xl font-semibold mb-6 text-blue-600">Create Your Account</h2>
             <form id="signupForm">
@@ -45,63 +42,17 @@
             </form>
             <p class="mt-4 text-center text-gray-700">Already have an account? <a href="login.html" class="text-blue-600 hover:underline">Login here</a></p>
 
-            <!-- Back to Home link -->
             <p class="mt-4 text-center text-gray-700">
                 <a href="index.html" class="text-blue-600 hover:underline">Back to Home</a>
             </p>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white shadow mt-8 py-2">
         <div class="container mx-auto p-2 text-center">
             <span class="text-sm text-gray-500">© 2024 <a href="index.html" class="text-blue-600 hover:underline">SpendWise™</a>. All Rights Reserved.</span>
         </div>
     </footer>
-
-    <script>
-        // Function to handle user sign up
-        document.getElementById('signupForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                alert("Passwords do not match!");
-                return;
-            }
-
-            // Prepare user data
-            const userData = {
-                name,
-                email,
-                password
-            };
-
-            try {
-                // Send signup data to the backend
-                const response = await fetch('http://localhost:5000/signup', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(userData)
-                });
-
-                const result = await response.json();
-                if (response.status === 201) {
-                    alert('Account created successfully! You can now log in.');
-                    window.location.href = 'login.html'; // Redirect to login page after successful sign up
-                } else {
-                    alert(result.message || 'Something went wrong!');
-                }
-            } catch (error) {
-                console.error('Error signing up:', error);
-                alert('Error signing up. Please try again.');
-            }
-        });
-    </script>
 
 </body>
 </html>
