@@ -15,14 +15,12 @@
 </head>
 
 <body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-900 flex flex-col min-h-screen overflow-hidden relative">
-    <!-- Background Decorative Elements -->
     <div class="absolute inset-0">
         <div class="absolute w-96 h-96 bg-gradient-to-br from-blue-300 to-purple-400 rounded-full opacity-40 blur-3xl animate-float"></div>
         <div class="absolute bottom-16 right-0 w-80 h-80 bg-gradient-to-tr from-pink-300 to-purple-400 rounded-full opacity-30 blur-3xl"></div>
         <div class="absolute top-20 left-20 w-72 h-72 bg-gradient-to-t from-green-200 to-teal-300 rounded-full opacity-20 blur-2xl"></div>
     </div>
 
-    <!-- Header -->
     <header class="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center px-6">
             <div class="flex items-center space-x-4">
@@ -40,9 +38,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12 flex-grow relative z-10">
-        <!-- Expense Form -->
         <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
             <h2 class="text-3xl font-semibold mb-6 text-blue-600">Track Your Expense</h2>
             <form id="expenseForm">
@@ -59,10 +55,8 @@
             <p id="successMessage" class="mt-4 text-green-600 hidden">Expense added successfully!</p>
         </section>
 
-        <!-- Expense List -->
         <section class="mb-8 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
             <h2 class="text-3xl font-semibold mb-6 text-purple-600">Recent Expenses</h2>
-            <!-- Scrollable Table Wrapper -->
             <div class="max-h-64 overflow-y-auto">
                 <table class="w-full table-auto border-collapse">
                     <thead>
@@ -72,14 +66,12 @@
                         </tr>
                     </thead>
                     <tbody id="expenseTable">
-                        <!-- Dynamic rows will be added here -->
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="relative z-10 bg-gradient-to-t from-gray-900 to-gray-800 text-gray-400 py-6 mt-auto">
         <div class="container mx-auto text-center">
             <span>© 2024 <a href="index.html" class="text-blue-500 hover:underline">SpendWise™</a>. All Rights Reserved.</span>
@@ -90,7 +82,6 @@
         document.getElementById('expenseForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get input values
             const expenseName = document.getElementById('expense').value.trim();
             const expenseAmount = document.getElementById('amount').value.trim();
 
@@ -99,7 +90,6 @@
                 return;
             }
 
-            // Add the data to the table
             const table = document.getElementById('expenseTable');
             const newRow = document.createElement('tr');
             newRow.classList.add('hover:bg-gray-50');
@@ -109,14 +99,11 @@
             `;
             table.appendChild(newRow);
 
-            // Show success message
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.remove('hidden');
 
-            // Hide success message after 2 seconds
             setTimeout(() => successMessage.classList.add('hidden'), 2000);
 
-            // Clear the form
             document.getElementById('expenseForm').reset();
         });
     </script>
